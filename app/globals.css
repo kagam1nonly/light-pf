@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+.dark {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+.typewriter {
+  position: relative;
+  width: fit-content;
+  border-right: 4px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(20) forwards,
+             blink 2.5s steps(1) ;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 5s ease-out forwards;
+}
+
+.fade-in-1 {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+  animation-delay: 2s;
+}
+
+.fade-in-2 {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+  animation-delay: 2.5s;
+}
+
+.fade-in-3, .fade-in-4, .fade-in-5 {
+  opacity: 0;
+  position: relative;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-in-3 { animation-delay: 3s; }
+.fade-in-4 { animation-delay: 3.5s; }
+.fade-in-5 { animation-delay: 4s; }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: currentColor }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUpEnter {
+  0% {
+    transform: translateY(20px) translateZ(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideUpEnter {
+  animation: slideUpEnter 0.5s ease-out forwards;
+}
