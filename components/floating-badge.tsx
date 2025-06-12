@@ -33,7 +33,7 @@ const messages: Message[] = [
         </svg>
       </span>
     ),
-    link: "https://t.me/kagam1nonly"
+    link: "mailto:jamespiastro20@gmail.com"
   },
 ];
 

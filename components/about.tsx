@@ -7,22 +7,25 @@ export const About = () => {
   const [truncatedCards, setTruncatedCards] = useState<boolean[]>([false, false, false, false]);
   const contentRefs = [useRef<HTMLParagraphElement>(null), useRef<HTMLParagraphElement>(null), useRef<HTMLParagraphElement>(null), useRef<HTMLParagraphElement>(null)];
 
-  /* eslint-disable react-hooks/exhaustive-deps */
-  useEffect(() => {
-    const checkTruncation = () => {
-      const newTruncatedState = contentRefs.map(ref => {
-        if (ref.current) {
-          return ref.current.scrollHeight > ref.current.clientHeight;
-        }
-        return false;
-      });
+  const checkTruncation = React.useCallback(() => {
+    const newTruncatedState = contentRefs.map(ref => {
+      if (ref.current) {
+        return ref.current.scrollHeight > ref.current.clientHeight;
+      }
+      return false;
+    });
+    
+    // Only update state if values have changed
+    if (JSON.stringify(newTruncatedState) !== JSON.stringify(truncatedCards)) {
       setTruncatedCards(newTruncatedState);
-    };
+    }
+  }, [truncatedCards]);
 
+  useEffect(() => {
     checkTruncation();
     window.addEventListener('resize', checkTruncation);
     return () => window.removeEventListener('resize', checkTruncation);
-  }, [contentRefs]);
+  }, [checkTruncation]);
 
   return (
     <div className={`relative ${selectedCard !== null ? 'z-99' : 'z-0'}`}>

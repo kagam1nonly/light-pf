@@ -156,6 +156,14 @@ const SkeletonFive = () => {
   return <div></div>;
 };
 
+const SkeletonSix = () => {
+  return <div></div>;
+};
+
+const SkeletonSeven = () => {
+  return <div></div>;
+};
+
 const cards = [
   {
     id: 5,
@@ -191,6 +199,20 @@ const cards = [
     className: "col-span-1",
     thumbnail: "/udemylogo.jpg",
     fullImage: "/udemy.jpg",
+  },
+  {
+    id: 10,
+    content: <SkeletonSix />,
+    className: "col-span-1",
+    thumbnail: "/jairosoftcert.jpg",
+    fullImage: "/jairosoftcert.jpg",
+  },
+  {
+    id: 11,
+    content: <SkeletonSeven/>,
+    className: "col-span-1",
+    thumbnail: "/workshopcert.jpg",
+    fullImage: "/workshopcert.jpg",
   },
 ];
 

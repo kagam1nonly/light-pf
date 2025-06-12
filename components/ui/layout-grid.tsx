@@ -29,9 +29,9 @@ export const LayoutGrid = ({ cards, isCertification }: { cards: Card[]; isCertif
     <>
       <div
         className={cn(
-          "w-auto grid auto-rows-[170px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative",
-          "sm:auto-rows-[175px] md:auto-rows-[128px] lg:auto-rows-[144px]",
-          isCertification ? "min-h-[120px]" : "min-h-[144px]"
+          "w-auto grid auto-rows-[120px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative",
+          "sm:auto-rows-[125px] md:auto-rows-[100px] lg:auto-rows-[144px]",
+          isCertification ? "min-h-[100px]" : "min-h-[144px]"
         )}
       >
         {cards.map((card, i) => (
@@ -42,7 +42,7 @@ export const LayoutGrid = ({ cards, isCertification }: { cards: Card[]; isCertif
                 card.className,
                 "relative items-center justify-center ",
                 selected?.id === card.id
-                  ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[90vh] [&:has(img[style*='aspect-ratio:1/1'])]:w-[35vw] [&:has(img[style*='aspect-ratio:<1'])]:w-[28vw] [&:has(img[style*='aspect-ratio:>1'])]:w-[45vw] z-[9999]"
+                  ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[80vh] [&:has(img[style*='aspect-ratio:1/1'])]:w-[25vw] [&:has(img[style*='aspect-ratio:<1'])]:w-[22vw] [&:has(img[style*='aspect-ratio:>1'])]:w-[35vw] z-[9999]"
                   : lastSelected?.id === card.id
                   ? "z-0 rounded-lg border border-gray-300 h-full w-full hover:scale-105 transition-transform duration-200"
                   : "rounded-lg border border-gray-300 h-full w-full hover:scale-105 transition-transform duration-200"
@@ -74,8 +74,8 @@ const ImageComponent = ({ card, isSelected }: { card: Card; isSelected: boolean 
       <div className={cn(
         "relative",
         isSelected
-          ? "w-full h-full max-h-[80vh] flex items-center justify-center"
-          : "w-[95%] h-[95%] flex items-center justify-center"
+          ? "w-full h-full max-h-[70vh] flex items-center justify-center"
+          : "w-[95%] h-[90%] flex items-center justify-center"
       )}>
         <motion.img
           layoutId={`image-${card.id}-image`}

@@ -40,8 +40,8 @@ export const ProjectGrid = ({
     <>
       <div
         className={cn(
-          "w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
-          isCertification ? "min-h-[200px] md:min-h-[120px]" : "min-h-[250px] md:min-h-[144px]"
+          "w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ",
+          isCertification ? "min-h-[100px] md:min-h-[120px]" : "min-h-[250px] md:min-h-[144px]"
         )}
       >
         {cards.map((card, i) => (
@@ -98,7 +98,7 @@ const ImageComponent = ({ card, isSelected }: { card: Card; isSelected: boolean 
             "transition-all duration-200 mx-auto",
             isSelected
               ? "max-w-full max-h-[80vh] w-auto h-auto object-contain"
-              : "h-[90%] w-full object-contain"
+              : "h-[85%] w-[50%] object-contain"
           )}
           alt="thumbnail"
         />
